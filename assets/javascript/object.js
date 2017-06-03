@@ -99,4 +99,4 @@ var questions = [{
     answer4: "Ahmad Bradshaw",
     correct: "Rashad Jennings",
   }
-]
+];

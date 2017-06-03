@@ -1,0 +1,17 @@
+body {
+  background-image: url("../images/background.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.container-fluid {
+  background-color: white;
+  width: 40%;
+  margin-right: 10%;
+  top: 275px;
+  padding-bottom: 15px;
+  ;
+  position: relative;
+}
