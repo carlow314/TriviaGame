@@ -3,7 +3,7 @@ var correct = 0;
 var wrong = 0;
 var unanswered = 0;
 var counter = 30;
-var currentQuestion = 0;
+var currentQuestionIndex = 0;
 var selectedAnswer;
 var timer;
 var startScreen;
@@ -19,23 +19,23 @@ function start() {
 };
 
 function SetCountDown() {
-  timer = setInterval(timer, 1000);
+  Clock = setInterval(Countdown, 1000);
 
-  function StopCountDown() {
+  function Countdown() {
     if (counter === 0) {
+      clearInterval(Clock);
       timeOutLoss();
-      clearInterval(timer);
     }
     if (counter > 0) {
       counter--;
     }
     $(".timer").html(counter);
   }
-};
+}
 
 function wait() {
-  if (currentQuestion < 9) {
-    currentQuestion++;
+  if (currentQuestionIndex < 9) {
+    currentQuestionIndex++;
     generateHTML();
     counter = 30;
     SetCountDown();
@@ -46,21 +46,21 @@ function wait() {
 
 function win() {
   correct++;
-  gameHTML = "<p class='text-center'> Time Remaining: <span class='timer'>" + timer + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + questions.correct[currentQuestion] + "</p>";
+  gameHTML = "<p class='text-center'> Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + questions[currentQuestionIndex].correct + "</p>";
   $(".main").html(gameHTML);
   setTimeout(wait, 5000);
 };
 
 function loss() {
   wrong++;
-  gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: " + questions.correct[currentQuestion] + "</p>";
+  gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: " + questions[currentQuestionIndex].correct + "</p>";
   $(".main").html(gameHTML);
   setTimeout(wait, 5000);
 };
 
 function timeOutLoss() {
   unanswered++;
-  gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + questions.correct[currentQuestion] + "</p>";
+  gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + questions[currentQuestionIndex].correct + "</p>";
   $(".main").html(gameHTML);
   setTimeout(wait, 5000);
 };
@@ -71,7 +71,7 @@ function finalScreen() {
 };
 
 function resetGame() {
-  currentQuestion = 0;
+  currentQuestionIndex = 0;
   correct = 0;
   wrong = 0;
   unanswered = 0;
@@ -82,28 +82,27 @@ function resetGame() {
 
 
 function generateHTML() {
-  gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + questions.question[currentQuestion] + "</p><p class='first-answer answer'>A. " + questions.answer1[currentQuestion] + "</p><p class='answer'>B. " + questions.answer2[currentQuestion] + "</p><p class='answer'>C. " + questions.answer3[currentQuestion] + "</p><p class='answer'>D. " + questions.answer4[currentQuestion] + "</p>";
+  gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + questions[currentQuestionIndex].question + "</p><p class='first-answer answer'>A. " + questions[currentQuestionIndex].answer1 + "</p><p class='answer'>B. " + questions[currentQuestionIndex].answer2 + "</p><p class='answer'>C. " + questions[currentQuestionIndex].answer3 + "</p><p class='answer'>D. " + questions[currentQuestionIndex].answer4 + "</p>";
   $(".main").html(gameHTML);
 }
 
 
 
 //MAIN PROCESS
-//===========================================
 start();
 
 //start-button click
-$(".main").on("click tap", ".start-button", function(event) {
+$(".main").on("click", ".start-button", function(event) {
   event.preventDefault();
-  console.log(currentQuestion);
+  console.log(currentQuestionIndex);
   generateHTML();
-  SetCountDown();
+  setCountDown();
 }); // Closes start-button click
 
-$(".main").on("click tap", ".answer", function(event) {;
+$(".main").on("click", ".answer", function(event) {;
   //If correct answer
   selectedAnswer = $(this).text();
-  if (selectedAnswer === questions.correct[currentQuestion]) {
+  if (selectedAnswer === questions[currentQuestionIndex].correct) {
 
     clearInterval(timer);
     win();
