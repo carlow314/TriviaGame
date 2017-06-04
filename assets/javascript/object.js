@@ -6,6 +6,7 @@ var questions = [{
     answer3: "Mario Manningham",
     answer4: "Plaxico Burress",
     correct: "David Tyree",
+    image: "<img class='center-block img-right' src='assets/images/tyree.jpg'>",
   },
 
   {
@@ -15,7 +16,7 @@ var questions = [{
     answer3: "Tiki Barber",
     answer4: "Rodney Hampton",
     correct: "Tiki Barber",
-
+    image: "<img class='center-block img-right' src='assets/images/tiki.jpg'>",
   },
 
   {
@@ -25,6 +26,7 @@ var questions = [{
     answer3: "Dave Brown",
     answer4: "Kerry Collins",
     correct: "Dave Brown",
+    image: "<img class='center-block img-right' src='assets/images/dave_brown.jpg'>",
 
   },
 
@@ -35,6 +37,7 @@ var questions = [{
     answer3: "Kerry Collins",
     answer4: "Eli Manning",
     correct: "Jeff Hostetler",
+    image: "<img class='center-block img-right' src='assets/images/jeff.jpg'>",
   },
 
   {
@@ -44,6 +47,7 @@ var questions = [{
     answer3: "Carl Banks",
     answer4: "Antonio Pierce",
     correct: "Lawrence Taylor",
+    image: "<img class='center-block img-right' src='assets/images/lt.jpg'>",
   },
 
   {
@@ -53,6 +57,7 @@ var questions = [{
     answer3: "Steve Smith",
     answer4: "victor Cruz",
     correct: "Odell Beckham Jr.",
+    image: "<img class='center-block img-right' src='assets/images/odell.jpg'>",
   },
 
   {
@@ -62,6 +67,7 @@ var questions = [{
     answer3: "Frank Gifford",
     answer4: "Pepper Johnson",
     correct: "Frank Gifford",
+    image: "<img class='center-block img-right' src='assets/images/frank.jpg'>",
   },
 
   {
@@ -71,6 +77,7 @@ var questions = [{
     answer3: "1962",
     answer4: "1959",
     correct: "1955",
+    image: "<img class='center-block img-right' src='assets/images/polo_grounds.jpg'>",
   },
 
   {
@@ -80,6 +87,7 @@ var questions = [{
     answer3: "1974",
     answer4: "1994",
     correct: "1974",
+    image: "<img class='center-block img-right' src='assets/images/yale_bowl.jpg'>",
   },
 
   {
@@ -89,6 +97,7 @@ var questions = [{
     answer3: "Bill Parcells",
     answer4: "Steve Owen",
     correct: "Steve Owen",
+    image: "<img class='center-block img-right' src='assets/images/steve.jpg'>",
   },
 
   {
@@ -98,5 +107,6 @@ var questions = [{
     answer3: "Antonio Pierce",
     answer4: "Ahmad Bradshaw",
     correct: "Rashad Jennings",
+    image: "<img class='center-block img-right' src='assets/images/rashad.jpg'>",
   }
 ];

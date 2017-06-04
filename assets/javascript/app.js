@@ -4,8 +4,8 @@ var wrong = 0;
 var unanswered = 0;
 var counter = 30;
 var currentQuestionIndex = 0;
-var selectedAnswer;
-var timer;
+var selectedAnswer = "";
+var clock;
 var startScreen;
 var gameHTML;
 
@@ -18,27 +18,27 @@ function start() {
   $(".main").html(startScreen);
 };
 
-function SetCountDown() {
-  Clock = setInterval(Countdown, 1000);
+function timer() {
+  clock = setInterval(thirtySeconds, 1000);
 
-  function Countdown() {
+  function thirtySeconds() {
     if (counter === 0) {
-      clearInterval(Clock);
       timeOutLoss();
+      clearInterval(clock);
     }
     if (counter > 0) {
       counter--;
     }
     $(".timer").html(counter);
   }
-}
+};
 
 function wait() {
   if (currentQuestionIndex < 9) {
     currentQuestionIndex++;
     generateHTML();
     counter = 30;
-    SetCountDown();
+    timer();
   } else {
     finalScreen();
   }
@@ -46,23 +46,23 @@ function wait() {
 
 function win() {
   correct++;
-  gameHTML = "<p class='text-center'> Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + questions[currentQuestionIndex].correct + "</p>";
+  gameHTML = "<p class='text-center'> Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + questions[currentQuestionIndex].correct + "</p>" + questions[currentQuestionIndex].image;
   $(".main").html(gameHTML);
-  setTimeout(wait, 5000);
+  setTimeout(wait, 3000);
 };
 
 function loss() {
   wrong++;
   gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: " + questions[currentQuestionIndex].correct + "</p>";
   $(".main").html(gameHTML);
-  setTimeout(wait, 5000);
+  setTimeout(wait, 3000);
 };
 
 function timeOutLoss() {
   unanswered++;
   gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + questions[currentQuestionIndex].correct + "</p>";
   $(".main").html(gameHTML);
-  setTimeout(wait, 5000);
+  setTimeout(wait, 3000);
 };
 
 function finalScreen() {
@@ -75,14 +75,14 @@ function resetGame() {
   correct = 0;
   wrong = 0;
   unanswered = 0;
-  timer = 30;
+  counter = 30;
   generateHTML();
   timer();
 };
 
 
 function generateHTML() {
-  gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + questions[currentQuestionIndex].question + "</p><p class='first-answer answer'>A. " + questions[currentQuestionIndex].answer1 + "</p><p class='answer'>B. " + questions[currentQuestionIndex].answer2 + "</p><p class='answer'>C. " + questions[currentQuestionIndex].answer3 + "</p><p class='answer'>D. " + questions[currentQuestionIndex].answer4 + "</p>";
+  gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + questions[currentQuestionIndex].question + "</p><p class='answer text-center'> " + questions[currentQuestionIndex].answer1 + "</p><p class='answer text-center'> " + questions[currentQuestionIndex].answer2 + "</p><p class='answer text-center'> " + questions[currentQuestionIndex].answer3 + "</p><p class='answer text-center'> " + questions[currentQuestionIndex].answer4 + "</p>";
   $(".main").html(gameHTML);
 }
 
@@ -96,26 +96,26 @@ $(".main").on("click", ".start-button", function(event) {
   event.preventDefault();
   console.log(currentQuestionIndex);
   generateHTML();
-  setCountDown();
+  timer();
 }); // Closes start-button click
 
 $(".main").on("click", ".answer", function(event) {;
   //If correct answer
   selectedAnswer = $(this).text();
-  if (selectedAnswer === questions[currentQuestionIndex].correct) {
-
-    clearInterval(timer);
+  console.log(selectedAnswer.trim());
+  console.log(questions[currentQuestionIndex].correct)
+  if (selectedAnswer.trim() === questions[currentQuestionIndex].correct) {
+    clearInterval(clock);
     win();
   }
-  //If incorrect ansewr
+  //If answer is wrong
   else {
 
-    clearInterval(timer);
+    clearInterval(clock);
     loss();
   }
-}); // Close .answer click
+});
 
-//reset-button click
 $(".main").on("click tap", ".reset-button", function(event) {
   resetGame();
-}); // Closes reset-button click
+});
