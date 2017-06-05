@@ -17,3 +17,9 @@ body {
   border-style: solid;
   border-width: thick;
 }
+
+.answer {
+  background-color: #369;
+  color: white;
+  border-radius: 25px;
+}
