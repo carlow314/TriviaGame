@@ -7,11 +7,13 @@ body {
 }
 
 .container-fluid {
-  background-color: white;
+  background-color: #bbb;
   width: 40%;
   margin-right: 10%;
   top: 275px;
   padding-bottom: 15px;
-  ;
   position: relative;
+  border-color: #a43;
+  border-style: solid;
+  border-width: thick;
 }

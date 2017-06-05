@@ -7,6 +7,8 @@ var questions = [{
     answer4: "Plaxico Burress",
     correct: "David Tyree",
     image: "<img class='center-block img-right' src='assets/images/tyree.jpg'>",
+    wrongimage: "<img class='center-block img-right' src='assets/images/x.png'>",
+    timeupimage: "<img class='center-block img-right' src='assets/images/expired.jpg'>",
   },
 
   {
@@ -17,6 +19,8 @@ var questions = [{
     answer4: "Rodney Hampton",
     correct: "Tiki Barber",
     image: "<img class='center-block img-right' src='assets/images/tiki.jpg'>",
+    wrongimage: "<img class='center-block img-right' src='assets/images/x.png'>",
+    timeupimage: "<img class='center-block img-right' src='assets/images/expired.jpg'>",
   },
 
   {
@@ -27,6 +31,8 @@ var questions = [{
     answer4: "Kerry Collins",
     correct: "Dave Brown",
     image: "<img class='center-block img-right' src='assets/images/dave_brown.jpg'>",
+    wrongimage: "<img class='center-block img-right' src='assets/images/x.png'>",
+    timeupimage: "<img class='center-block img-right' src='assets/images/expired.jpg'>",
 
   },
 
@@ -38,6 +44,8 @@ var questions = [{
     answer4: "Eli Manning",
     correct: "Jeff Hostetler",
     image: "<img class='center-block img-right' src='assets/images/jeff.jpg'>",
+    wrongimage: "<img class='center-block img-right' src='assets/images/x.png'>",
+    timeupimage: "<img class='center-block img-right' src='assets/images/expired.jpg'>",
   },
 
   {
@@ -48,6 +56,8 @@ var questions = [{
     answer4: "Antonio Pierce",
     correct: "Lawrence Taylor",
     image: "<img class='center-block img-right' src='assets/images/lt.jpg'>",
+    wrongimage: "<img class='center-block img-right' src='assets/images/x.png'>",
+    timeupimage: "<img class='center-block img-right' src='assets/images/expired.jpg'>",
   },
 
   {
@@ -58,6 +68,8 @@ var questions = [{
     answer4: "victor Cruz",
     correct: "Odell Beckham Jr.",
     image: "<img class='center-block img-right' src='assets/images/odell.jpg'>",
+    wrongimage: "<img class='center-block img-right' src='assets/images/x.png'>",
+    timeupimage: "<img class='center-block img-right' src='assets/images/expired.jpg'>",
   },
 
   {
@@ -68,6 +80,8 @@ var questions = [{
     answer4: "Pepper Johnson",
     correct: "Frank Gifford",
     image: "<img class='center-block img-right' src='assets/images/frank.jpg'>",
+    wrongimage: "<img class='center-block img-right' src='assets/images/x.png'>",
+    timeupimage: "<img class='center-block img-right' src='assets/images/expired.jpg'>",
   },
 
   {
@@ -78,6 +92,8 @@ var questions = [{
     answer4: "1959",
     correct: "1955",
     image: "<img class='center-block img-right' src='assets/images/polo_grounds.jpg'>",
+    wrongimage: "<img class='center-block img-right' src='assets/images/x.png'>",
+    timeupimage: "<img class='center-block img-right' src='assets/images/expired.jpg'>",
   },
 
   {
@@ -88,6 +104,8 @@ var questions = [{
     answer4: "1994",
     correct: "1974",
     image: "<img class='center-block img-right' src='assets/images/yale_bowl.jpg'>",
+    wrongimage: "<img class='center-block img-right' src='assets/images/x.png'>",
+    timeupimage: "<img class='center-block img-right' src='assets/images/expired.jpg'>",
   },
 
   {
@@ -98,6 +116,8 @@ var questions = [{
     answer4: "Steve Owen",
     correct: "Steve Owen",
     image: "<img class='center-block img-right' src='assets/images/steve.jpg'>",
+    wrongimage: "<img class='center-block img-right' src='assets/images/x.png'>",
+    timeupimage: "<img class='center-block img-right' src='assets/images/expired.jpg'>",
   },
 
   {
@@ -108,5 +128,7 @@ var questions = [{
     answer4: "Ahmad Bradshaw",
     correct: "Rashad Jennings",
     image: "<img class='center-block img-right' src='assets/images/rashad.jpg'>",
+    wrongimage: "<img class='center-block img-right' src='assets/images/x.png'>",
+    timeupimage: "<img class='center-block img-right' src='assets/images/expired.jpg'>",
   }
 ];
