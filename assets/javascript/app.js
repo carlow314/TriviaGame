@@ -65,8 +65,9 @@ function timeOutLoss() {
 };
 //function for stat screen
 function finalScreen() {
-  gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Game over! How did you fare?" + "</p>" + "<p class='summary-correct'>Correct Answers: " + correct + "</p>" + "<p>Wrong Answers: " + wrong + "</p>" + "<p>Unanswered: " + unanswered + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href='#' role='button'>Reset The Quiz!</a></p>";
+  gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Game over! How did you fare?" + "</p>" + "<p class='summary-correct text-center'>Correct Answers: " + correct + "</p>" + "<p class='text-center'>Wrong Answers: " + wrong + "</p>" + "<p class='text-center'>Unanswered: " + unanswered + "</p>";
   $(".main").html(gameHTML);
+  setTimeout(resetGame, 5000);
 };
 //function for game restart
 function resetGame() {
@@ -111,8 +112,4 @@ $(".main").on("click", ".answer", function(event) {;
     clearInterval(clock);
     loss();
   }
-});
-
-$(".main").on("click tap", ".reset-button", function(event) {
-  resetGame();
 });
