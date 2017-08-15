@@ -48,6 +48,7 @@ function win() {
   gameHTML = "<p class='text-center'> Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + questions[currentQuestionIndex].correct + "</p>" + questions[currentQuestionIndex].image;
   $(".main").html(gameHTML);
   setTimeout(wait, 3000);
+  clearInterval(clock);
 };
 //set loss funcion
 function loss() {
@@ -55,6 +56,7 @@ function loss() {
   gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: " + questions[currentQuestionIndex].correct + "</p>" + questions[currentQuestionIndex].wrongimage;
   $(".main").html(gameHTML);
   setTimeout(wait, 3000);
+  clearInterval(clock);
 };
 //set loss function for expiration of countdown
 function timeOutLoss() {
@@ -63,7 +65,7 @@ function timeOutLoss() {
   $(".main").html(gameHTML);
   setTimeout(wait, 3000);
 };
-//function for stat screen
+//function feor stat screen
 function finalScreen() {
   gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Game over! How did you fare?" + "</p>" + "<p class='summary-correct text-center'>Correct Answers: " + correct + "</p>" + "<p class='text-center'>Wrong Answers: " + wrong + "</p>" + "<p class='text-center'>Unanswered: " + unanswered + "</p>";
   $(".main").html(gameHTML);
@@ -92,24 +94,21 @@ function generateHTML() {
 start();
 
 //start-button click
-$(".main").on("click", ".start-button", function(event) {
+$(".main").on("click", ".start-button", function (event) {
   event.preventDefault();
   console.log(currentQuestionIndex);
   generateHTML();
   timer();
 }); // Closes start-button click
 
-$(".main").on("click", ".answer", function(event) {;
+$(".main").on("click", ".answer", function (event) {;
   //If correct answer
   selectedAnswer = $(this).text();
   console.log(selectedAnswer.trim());
   console.log(questions[currentQuestionIndex].correct)
   if (selectedAnswer.trim() === questions[currentQuestionIndex].correct) {
-    clearInterval(clock);
     win();
   } else {
-
-    clearInterval(clock);
     loss();
   }
 });
