@@ -21,4 +21,9 @@ This is a NY Giants trivia game. This app was built out with HTML, CSS, Javascri
 4.) Once all the questions have been answered a final screen will appear. This will display the final results from the trivia game. After 5 seconds the game will start over.
 ![Trivia Final Screen](assets/images/final_screen.png)
 
-
+# Technologies Used
+* HTML
+* CSS
+* Bootstrap
+* Javascript
+* Jquery
